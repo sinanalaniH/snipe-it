@@ -22,8 +22,7 @@
 
         var stored = null;
         try { stored = localStorage.getItem('theme'); } catch (e) {}
-        var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var currentTheme = stored || (systemDark ? 'dark' : 'light');
+        var currentTheme = stored || 'light';
 
         function updateButton(isDark) {
             var label = isDark ? '{{ trans('general.light_mode') }}' : '{{ trans('general.dark_mode') }}';
