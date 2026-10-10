@@ -26,7 +26,149 @@ html[data-theme="light"] {
 }
 
 .main-header .navbar {
-    border-bottom: 3px solid var(--skynet-cyan);
+    border-bottom: 1px solid #dce4ea;
+}
+
+/* Quiet work surfaces; the logo and navigation carry the brand colors. */
+html[data-theme="light"] .main-header .navbar,
+html[data-theme="light"] .main-header .navbar-nav,
+html[data-theme="light"] .main-header .navbar-nav > li > a {
+    background: #ffffff !important;
+    color: #26343f !important;
+}
+
+html[data-theme="light"] .main-header .navbar-nav > li > a:hover,
+html[data-theme="light"] .main-header .navbar-nav > li > a:focus {
+    background: #edf7fa !important;
+    color: #125568 !important;
+}
+
+.main-header .sidebar-toggle.btn {
+    background: var(--skynet-charcoal) !important;
+    color: #ffffff !important;
+}
+
+.main-header .logo.navbar-brand {
+    padding-inline: 8px;
+    margin-inline: 8px;
+}
+
+.content-header {
+    padding: 24px 24px 12px;
+}
+
+.content {
+    padding: 16px 24px;
+}
+
+.content-header > h1 {
+    font-size: 26px;
+    letter-spacing: -0.4px;
+}
+
+.dashboard.small-box {
+    position: relative;
+    background: var(--box-bg) !important;
+    color: var(--color-fg) !important;
+    border: 1px solid var(--box-header-bottom-border-color);
+    border-top: 3px solid var(--skynet-cyan);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: none;
+    margin-bottom: 24px;
+}
+
+.dashboard.small-box.bg-orange,
+.dashboard.small-box.bg-yellow {
+    border-top-color: var(--skynet-orange);
+}
+
+.dashboard.small-box .inner {
+    padding: 20px 16px 12px;
+}
+
+.dashboard.small-box h3 {
+    color: var(--color-fg) !important;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.dashboard.small-box p {
+    color: var(--color-fg) !important;
+    font-size: 15px;
+}
+
+.dashboard.small-box .icon,
+.dashboard.small-box:hover .icon {
+    top: 20px;
+    right: 16px;
+    font-size: 28px;
+    color: #176b80;
+    opacity: 0.7;
+}
+
+[dir="rtl"] .dashboard.small-box .icon {
+    right: auto;
+    left: 16px;
+}
+
+.dashboard.small-box > .small-box-footer {
+    background: transparent !important;
+    color: var(--link-color) !important;
+    border-top: 1px solid var(--box-header-bottom-border-color);
+    padding: 10px 16px;
+    font-size: 13px;
+    text-align: start;
+}
+
+.dashboard.small-box:hover {
+    border-color: var(--skynet-cyan);
+}
+
+.skynet-empty-inventory {
+    border: 1px solid var(--box-header-bottom-border-color);
+    border-inline-start: 4px solid var(--skynet-orange);
+}
+
+.skynet-empty-inventory .box-body {
+    padding: 24px;
+}
+
+.skynet-empty-inventory p {
+    line-height: 1.8;
+    margin-bottom: 24px;
+    max-width: 850px;
+}
+
+.skynet-empty-inventory p strong {
+    font-weight: 400;
+}
+
+.skynet-empty-inventory .btn {
+    background: transparent !important;
+    color: var(--link-color) !important;
+    border: 1px solid var(--input-border-color);
+    padding: 10px 12px;
+    margin-bottom: 12px;
+}
+
+.skynet-empty-inventory .bg-teal {
+    background: #176b80 !important;
+    color: #ffffff !important;
+    border-color: #176b80;
+}
+
+.skynet-empty-inventory .btn:hover,
+.skynet-empty-inventory .btn:focus {
+    border-color: var(--skynet-cyan);
+}
+
+@media (max-width: 767px) {
+    .content-header { padding: 16px 16px 8px; }
+    .content { padding: 12px 16px; }
+    .dashboard.small-box h3 { font-size: 28px; }
+    .skynet-empty-inventory .box-body { padding: 16px; }
 }
 
 .main-header .logo.navbar-brand {
