@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ ($snipeSettings) && ($snipeSettings->site_name) ? $snipeSettings->site_name : 'Snipe-IT' }}</title>
+    <title>SKYNET</title>
 
     <link rel="shortcut icon" type="image/ico" href="{{ ($snipeSettings) && ($snipeSettings->favicon!='') ?  Storage::disk('public')->url(e($snipeSettings->favicon)) : config('app.url').'/favicon.ico' }}">
 
@@ -46,20 +46,14 @@
         </style>
     @endif
 
+    <link rel="stylesheet" href="{{ asset('css/skynet.css') }}?v={{ filemtime(public_path('css/skynet.css')) }}">
 </head>
 
 <body class="hold-transition login-page">
 
     @include('partials.impersonation-banner')
 
-    {{-- Login / error page header bar. Styled with the tenant's
-         var(--main-theme-color) background so the uploaded logo lives
-         in the same colored context it does on the logged-in app's
-         top-nav. Without this, tenants who designed a logo for a
-         colored navbar (e.g. white text on brand color) would see it
-         float against a plain light or dark body background where it
-         may not read well. Falls back to site_name text when no logo
-         is uploaded so the bar has something meaningful in it. --}}
+    {{-- SKYNET's black wordmark needs a light background on login and error pages. --}}
     <header class="basic-page-header">
         {{-- Authenticated visitors (e.g. hit a 404 or 403 mid-session)
              get a clickable logo that bounces them back to the app
@@ -69,19 +63,11 @@
              logo renders as a non-interactive <span>. --}}
         @auth
             <a href="{{ config('app.url') }}" class="basic-page-header__link">
-                @if (($snipeSettings) && ($snipeSettings->logo!=''))
-                    <img id="login-logo" src="{{ Storage::disk('public')->url('').e($snipeSettings->logo) }}" alt="{{ $snipeSettings->site_name }}">
-                @else
-                    <span class="basic-page-header__site-name">{{ $snipeSettings->site_name ?? 'Snipe-IT' }}</span>
-                @endif
+                <img id="login-logo" src="{{ asset('img/skynet/logo-stacked.png') }}" alt="SKYNET">
             </a>
         @else
             <span class="basic-page-header__link">
-                @if (($snipeSettings) && ($snipeSettings->logo!=''))
-                    <img id="login-logo" src="{{ Storage::disk('public')->url('').e($snipeSettings->logo) }}" alt="{{ $snipeSettings->site_name }}">
-                @else
-                    <span class="basic-page-header__site-name">{{ $snipeSettings->site_name ?? 'Snipe-IT' }}</span>
-                @endif
+                <img id="login-logo" src="{{ asset('img/skynet/logo-stacked.png') }}" alt="SKYNET">
             </span>
         @endauth
         {{-- Light/dark toggle. Absolute-positioned on the right side of

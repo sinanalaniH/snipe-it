@@ -1,0 +1,290 @@
+/* SKYNET identity, layered over the existing AdminLTE components. */
+:root {
+    --skynet-cyan: #55bfd8;
+    --skynet-orange: #ec6936;
+    --skynet-charcoal: #20282f;
+    --main-theme-color: #176b80;
+    --main-theme-hover: #125568;
+    --nav-primary-text-color: #ffffff;
+    --btn-theme-text-color: #ffffff;
+    --btn-theme-hover-text-color: #ffffff;
+    --sidenav-text-nohover-color: #c6d1da;
+    --sidenav-text-hover-color: #ffffff;
+}
+
+html[data-theme="light"] {
+    --color-bg: #f4f6f8;
+    --color-fg: #26343f;
+    --box-bg: #ffffff;
+    --header-color: #20282f;
+    --link-color: #176b80;
+    --link-hover: #125568;
+    --box-header-top-border-color: #dce4ea;
+    --box-header-bottom-border-color: #e8edf1;
+    --input-border-color: #c7d2dc;
+    --table-stripe-bg-alt: #f7f9fb;
+}
+
+.main-header .navbar {
+    border-bottom: 1px solid #dce4ea;
+}
+
+/* Quiet work surfaces; the logo and navigation carry the brand colors. */
+html[data-theme="light"] .main-header .navbar,
+html[data-theme="light"] .main-header .navbar-nav,
+html[data-theme="light"] .main-header .navbar-nav > li > a {
+    background: #ffffff !important;
+    color: #26343f !important;
+}
+
+html[data-theme="light"] .main-header .navbar-nav > li > a:hover,
+html[data-theme="light"] .main-header .navbar-nav > li > a:focus {
+    background: #edf7fa !important;
+    color: #125568 !important;
+}
+
+.main-header .sidebar-toggle.btn {
+    background: var(--skynet-charcoal) !important;
+    color: #ffffff !important;
+}
+
+.main-header .logo.navbar-brand {
+    padding-inline: 8px;
+    margin-inline: 8px;
+}
+
+.content-header {
+    padding: 24px 24px 12px;
+}
+
+.content {
+    padding: 16px 24px;
+}
+
+.content-header > h1 {
+    font-size: 26px;
+    letter-spacing: -0.4px;
+}
+
+.dashboard.small-box {
+    position: relative;
+    background: var(--box-bg) !important;
+    color: var(--color-fg) !important;
+    border: 1px solid var(--box-header-bottom-border-color);
+    border-top: 3px solid var(--skynet-cyan);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: none;
+    margin-bottom: 24px;
+}
+
+.dashboard.small-box.bg-orange,
+.dashboard.small-box.bg-yellow {
+    border-top-color: var(--skynet-orange);
+}
+
+.dashboard.small-box .inner {
+    padding: 20px 16px 12px;
+}
+
+.dashboard.small-box h3 {
+    color: var(--color-fg) !important;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.dashboard.small-box p {
+    color: var(--color-fg) !important;
+    font-size: 15px;
+}
+
+.dashboard.small-box .icon,
+.dashboard.small-box:hover .icon {
+    top: 20px;
+    right: 16px;
+    font-size: 28px;
+    color: #176b80;
+    opacity: 0.7;
+}
+
+[dir="rtl"] .dashboard.small-box .icon {
+    right: auto;
+    left: 16px;
+}
+
+.dashboard.small-box > .small-box-footer {
+    background: transparent !important;
+    color: var(--link-color) !important;
+    border-top: 1px solid var(--box-header-bottom-border-color);
+    padding: 10px 16px;
+    font-size: 13px;
+    text-align: start;
+}
+
+.dashboard.small-box:hover {
+    border-color: var(--skynet-cyan);
+}
+
+.skynet-empty-inventory {
+    border: 1px solid var(--box-header-bottom-border-color);
+    border-inline-start: 4px solid var(--skynet-orange);
+}
+
+.skynet-empty-inventory .box-body {
+    padding: 24px;
+}
+
+.skynet-empty-inventory p {
+    line-height: 1.8;
+    margin-bottom: 24px;
+    max-width: 850px;
+}
+
+.skynet-empty-inventory p strong {
+    font-weight: 400;
+}
+
+.skynet-empty-inventory .btn {
+    background: transparent !important;
+    color: var(--link-color) !important;
+    border: 1px solid var(--input-border-color);
+    padding: 10px 12px;
+    margin-bottom: 12px;
+}
+
+.skynet-empty-inventory .bg-teal {
+    background: #176b80 !important;
+    color: #ffffff !important;
+    border-color: #176b80;
+}
+
+.skynet-empty-inventory .btn:hover,
+.skynet-empty-inventory .btn:focus {
+    border-color: var(--skynet-cyan);
+}
+
+@media (max-width: 767px) {
+    .content-header { padding: 16px 16px 8px; }
+    .content { padding: 12px 16px; }
+    .dashboard.small-box h3 { font-size: 28px; }
+    .skynet-empty-inventory .box-body { padding: 16px; }
+}
+
+.main-header .logo.navbar-brand {
+    background: #ffffff !important;
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin: 6px 12px;
+    height: 38px;
+    width: auto;
+    line-height: 30px;
+}
+
+.main-header .logo img.navbar-brand-img {
+    display: block;
+    height: 30px;
+    max-height: 30px;
+    width: auto;
+    max-width: 180px;
+    padding: 0;
+    margin: 0;
+    object-fit: contain;
+}
+
+.main-sidebar,
+.sidebar-menu > li > .treeview-menu {
+    background: var(--skynet-charcoal);
+}
+
+.sidebar-menu > li.active > a,
+.sidebar-menu > li:hover > a {
+    background: #303c47;
+    border-left-color: var(--skynet-cyan);
+    border-inline-start-color: var(--skynet-cyan);
+}
+
+.sidebar-menu > li.header {
+    background: #192127;
+    color: #c6d1da;
+}
+
+.content-header > h1 {
+    font-weight: 600;
+}
+
+.box {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(32, 40, 47, 0.08);
+}
+
+.box-header.with-border {
+    padding: 16px;
+}
+
+.btn,
+.form-control,
+.select2-container--default .select2-selection--single {
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: #176b80;
+    box-shadow: 0 0 0 2px rgba(85, 191, 216, 0.2);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--skynet-orange);
+    outline-offset: 3px;
+}
+
+.basic-page-header {
+    background: #ffffff;
+    border-bottom: 3px solid var(--skynet-cyan);
+    padding: 24px 48px;
+}
+
+.basic-page-header__link #login-logo {
+    height: 144px;
+    max-height: 144px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.basic-page-header .basic-page-header__toggle,
+.basic-page-header .basic-page-header__toggle:hover,
+.basic-page-header .basic-page-header__toggle:focus {
+    color: #176b80;
+}
+
+.login-box {
+    width: 100%;
+    margin: 24px auto;
+    border-top-color: var(--skynet-orange);
+}
+
+.login-box-body {
+    padding: 24px;
+}
+
+@media (max-width: 767px) {
+    .main-header .logo.navbar-brand {
+        margin-inline: 8px;
+    }
+
+    .main-header .logo img.navbar-brand-img {
+        max-width: 140px;
+    }
+
+    .basic-page-header {
+        padding-block: 16px;
+    }
+
+    .basic-page-header__link #login-logo {
+        height: 112px;
+    }
+}

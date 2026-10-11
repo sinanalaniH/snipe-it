@@ -6,7 +6,7 @@
     <title>
         @section('title')
         @show
-        :: {{ $snipeSettings->site_name }}
+        :: SKYNET
     </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -42,6 +42,7 @@
 
 
     @include('partials.theme-mode-tenant-vars')
+    <link rel="stylesheet" href="{{ asset('css/skynet.css') }}?v={{ filemtime(public_path('css/skynet.css')) }}">
 
     {{-- Custom CSS --}}
     @if (($snipeSettings) && ($snipeSettings->custom_css))
@@ -85,29 +86,11 @@
                     </a>
                     <div class="nav navbar-nav navbar-left">
                         <div class="left-navblock">
-                            @if ($snipeSettings->brand == '3')
-                                <a class="logo navbar-brand no-hover" href="{{ config('app.url') }}">
-                                    @if ($snipeSettings->logo!='')
-                                        <img class="navbar-brand-img"
-                                             src="{{ Storage::disk('public')->url($snipeSettings->logo) }}"
-                                             alt="{{ $snipeSettings->site_name }} logo">
-                                    @endif
-                                    {{ $snipeSettings->site_name }}
-                                </a>
-                            @elseif ($snipeSettings->brand == '2')
-                                <a class="logo navbar-brand no-hover" href="{{ config('app.url') }}">
-                                    @if ($snipeSettings->logo!='')
-                                        <img class="navbar-brand-img"
-                                             src="{{ Storage::disk('public')->url($snipeSettings->logo) }}"
-                                             alt="{{ $snipeSettings->site_name }} logo">
-                                    @endif
-                                    <span class="sr-only">{{ $snipeSettings->site_name }}</span>
-                                </a>
-                            @else
-                                <a class="logo navbar-brand no-hover" href="{{ config('app.url') }}">
-                                    {{ $snipeSettings->site_name }}
-                                </a>
-                            @endif
+                            <a class="logo navbar-brand no-hover" href="{{ config('app.url') }}">
+                                <img class="navbar-brand-img"
+                                     src="{{ asset('img/skynet/logo-horizontal.png') }}"
+                                     alt="SKYNET">
+                            </a>
                         </div>
                     </div>
 
